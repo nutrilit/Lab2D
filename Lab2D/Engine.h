@@ -38,3 +38,5 @@ private:
 };
 
 #endif
+
+// test mariusz do jakuba
