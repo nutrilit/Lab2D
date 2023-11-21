@@ -6,6 +6,7 @@
 #include "Engine.h" // Dodaj plik nagłówkowy Engine
 int main(int argc, char* argv[])
 {
+    //iak asd
     Engine game(800, 600);
     game.Run();
     return 0;
