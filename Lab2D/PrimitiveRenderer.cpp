@@ -225,6 +225,111 @@ void PrimitiveRenderer::floodFill(SDL_Renderer* renderer, int x, int y, SDL_Colo
     }
 }
 
+void PrimitiveRenderer::translatePolylinePoints(SDL_Renderer* renderer, std::vector<Point2D>& points, bool closed, SDL_Color color, int x, int y)
+{
+    std::vector<Point2D> polylinePoints;
+    for (size_t i = 0; i < points.size(); ++i) {
+        polylinePoints.push_back(points[i]);
+    }
+    for (size_t i = 0; i < polylinePoints.size(); ++i) {
+        polylinePoints[i].x += x;
+        polylinePoints[i].y += y;
+    }
+    DrawPolyline(renderer, polylinePoints, closed, color);
+}
+
+void PrimitiveRenderer::translatePolygonPoints(SDL_Renderer* renderer, const std::vector<Point2D>& vertices, SDL_Color color, int x, int y)
+{
+    std::vector<Point2D> tmp;
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        tmp.push_back(vertices[i]);
+    }
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        tmp[i].x += x;
+        tmp[i].y += y;
+    }
+    DrawPolygon(renderer, tmp, color);
+
+}
+
+void PrimitiveRenderer::translateEllipse(SDL_Renderer* renderer, int x0, int y0, int RX, int RY, SDL_Color color, int x, int y)
+{
+    int tmpX0 = x0 + x, tmpY0 = y0 + y, tmpRX = RX, tmpRY = RY;
+    DrawEllipse(renderer, tmpX0, tmpY0, RX, RY, color);
+}
+
+void PrimitiveRenderer::scalePolylinePoints(SDL_Renderer* renderer, std::vector<Point2D>& points, bool closed, SDL_Color color, double k)
+{
+    std::vector<Point2D> polylinePoints;
+    for (size_t i = 0; i < points.size(); ++i) {
+        polylinePoints.push_back(points[i]);
+    }
+    for (size_t i = 0; i < polylinePoints.size(); ++i) {
+        polylinePoints[i].x *= k;
+        polylinePoints[i].y *= k;
+    }
+    int tmpX = points[0].x - polylinePoints[0].x;
+    int tmpY = points[0].y - polylinePoints[0].y;
+    translatePolygonPoints(renderer, polylinePoints, color, tmpX, tmpY);
+    //DrawPolyline(renderer, polylinePoints, closed, color);
+}
+
+void PrimitiveRenderer::scalePolygonPoints(SDL_Renderer* renderer, const std::vector<Point2D>& vertices, SDL_Color color, double k)
+{
+    std::vector<Point2D> tmp;
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        tmp.push_back(vertices[i]);
+    }
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        tmp[i].x *= k;
+        tmp[i].y *= k;
+    }
+    int tmpX = vertices[0].x - tmp[0].x;
+    int tmpY = vertices[0].y - tmp[0].y;
+    translatePolygonPoints(renderer, tmp, color, tmpX, tmpY);
+    //DrawPolygon(renderer, tmp, color);
+}
+
+void PrimitiveRenderer::scaleEllipse(SDL_Renderer* renderer, int x0, int y0, int RX, int RY, SDL_Color color, double k)
+{
+    int tmpX0 = x0 * k, tmpY0 = y0 * k, tmpRX = RX * k, tmpRY = RY * k;
+    DrawEllipse(renderer, x0, y0, tmpRX, tmpRY, color);
+}
+
+void PrimitiveRenderer::rotatePolylinePoints(SDL_Renderer* renderer, std::vector<Point2D>& points, bool closed, SDL_Color color, int x, int y, long double a)
+{
+    std::vector<Point2D> polylinePoints;
+    for (size_t i = 0; i < points.size(); ++i) {
+        polylinePoints.push_back(points[i]);
+    }
+    for (size_t i = 0; i < polylinePoints.size(); ++i) {
+        polylinePoints[i].x = x + (points[i].x - x) * cos(a) - (points[i].y - y) * sin(a);
+        polylinePoints[i].y = y + (points[i].x - x) * sin(a) - (points[i].y - y) * cos(a);
+    }
+    DrawPolyline(renderer, polylinePoints, closed, color);
+
+}
+
+void PrimitiveRenderer::rotatePolygonPoints(SDL_Renderer* renderer, const std::vector<Point2D>& vertices, SDL_Color color, int x, int y, long double a)
+{
+    std::vector<Point2D> tmp;
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        tmp.push_back(vertices[i]);
+    }
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        tmp[i].x = x + (vertices[i].x - x) * cos(a) - (vertices[i].y - y) * sin(a);
+        tmp[i].y = y + (vertices[i].x - x) * sin(a) - (vertices[i].y - y) * cos(a);
+    }
+    DrawPolygon(renderer, tmp, color);
+
+}
+
+void PrimitiveRenderer::rotateEllipse(SDL_Renderer* renderer, int x0, int y0, int RX, int RY, SDL_Color color, int x, int y, long double a)
+{
+    int tmpX0 = x0 + x, tmpY0 = y0 + y, tmpRX = RX, tmpRY = RY;
+    DrawEllipse(renderer, tmpX0, tmpY0, RX, RY, color);
+}
+
 //test1
 
 //test23

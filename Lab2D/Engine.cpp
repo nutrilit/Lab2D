@@ -138,6 +138,18 @@ void Engine::Run()
 
         pr1.DrawPolygon2(renderer, polygonSegments, zolty);
 
+        //Zakomentuj bo zajebany ekran w chuj xd
+        //translate
+        pr1.translatePolylinePoints(renderer, polylinePoints, true, czerwony, 50, 50);
+        pr1.translatePolygonPoints(renderer, polygonPoints, cyraneczka,50,50);
+        pr1.translateEllipse(renderer, 600, 500, 30, 10, czerwony,50,50);
+        //scale
+        pr1.scalePolylinePoints(renderer, polylinePoints, true, czerwony, 0.5);
+        pr1.scalePolygonPoints(renderer, polygonPoints, czerwony, 0.5);
+        pr1.scaleEllipse(renderer, 600, 500, 30, 10, czerwony , 0.5);
+        //rotate
+        pr1.rotatePolylinePoints(renderer, polylinePoints, true, czerwony, 300, 500, 10);
+        pr1.rotatePolygonPoints(renderer, polygonPoints, czerwony, 300, 500, 10);
 
         // zad5 lab3
         //pr1.floodFill(renderer, 601, 501, czarny, zolty);
