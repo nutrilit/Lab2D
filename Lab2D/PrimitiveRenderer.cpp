@@ -226,7 +226,7 @@ void PrimitiveRenderer::floodFill(SDL_Renderer* renderer, int x, int y, SDL_Colo
 }
 
 void PrimitiveRenderer::translatePolylinePoints(SDL_Renderer* renderer, std::vector<Point2D>& points, bool closed, SDL_Color color, int x, int y)
-{
+ { 
     std::vector<Point2D> polylinePoints;
     for (size_t i = 0; i < points.size(); ++i) {
         polylinePoints.push_back(points[i]);

@@ -3,8 +3,8 @@
 #define PLAYER_H
 #include <iostream>
 #include <SDL.h>
-
-class Player
+#include "GameObject.cpp"
+class Player : public GameObject
 {
 public:
     // Deklaracje funkcji i zmiennej cz³onkowskich
