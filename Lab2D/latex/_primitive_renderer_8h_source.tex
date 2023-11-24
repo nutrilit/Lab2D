@@ -1,0 +1,66 @@
+\doxysection{Primitive\+Renderer.\+h}
+\hypertarget{_primitive_renderer_8h_source}{}\label{_primitive_renderer_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ PRIMITIVERENDERER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ PRIMITIVERENDERER\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Point2D.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}LineSegment.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GameObject.cpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_primitive_renderer}{PrimitiveRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_shape_object}{ShapeObject}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ SDL\_Rect\ rect;}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#pragma\ region\ \ Labolatorium2\ -\/\ zad2}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_af0629cdda2fc354853bb408566118027}{Draw}}(SDL\_Renderer*\ renderer,\ SDL\_Rect\ rect1,\ SDL\_Color\ color)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ region\ Labolatorium2\ -\/\ zad3}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_a29d1ee8e4a6fe7b0f60e1668e09a8124}{RysLinie}}(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ x1,\ \textcolor{keywordtype}{int}\ y1,\ SDL\_Color\ color);}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#pragma\ region\ Labolatorium2\ -\/\ zad6}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_a15b72d4d64080a97830f636ec8eb4456}{DrawPolyline}}(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ points,\ \textcolor{keywordtype}{bool}\ closed\ =\ \textcolor{keyword}{false},\ SDL\_Color\ color\ =\ \{\ 255,\ 255,\ 255,\ 255\ \});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_a2b406b53e0fa77360c2d25c2a911c724}{DrawPolyline2}}(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<LineSegment>\&\ segments,\ \textcolor{keywordtype}{bool}\ closed,\ SDL\_Color\ color\ =\ \{\ 255,\ 255,\ 255,\ 255\ \});}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#pragma\ region\ Labolatorium3\ -\/\ zad1}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_a2a603022efd8d45bda1a224d2db9a904}{DrawCircle4Symmetry}}(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ R,\ SDL\_Color\ color\ =\ \{\ 255,\ 255,\ 255,\ 255\ \});}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#pragma\ region\ Labolatorium3\ -\/\ zad2}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_aeee351b1021ae6f3d9ba5b5d9caaad5b}{DrawEllipse}}(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ RX,\ \textcolor{keywordtype}{int}\ RY,\ SDL\_Color\ color\ =\ \{\ 255,\ 255,\ 255,\ 255\ \});}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#pragma\ region\ Labolatorium3\ -\/\ zad3}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_aefe1f2982872c2b4174e4867870d1282}{DrawPolygon}}(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ vertices,\ SDL\_Color\ color\ =\ \{\ 255,\ 255,\ 255,\ 255\ \});}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_a4f82d3b8b6d2edcc4eb5e079690c40dd}{DrawPolygon2}}(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<LineSegment>\&\ segments,\ SDL\_Color\ color\ =\ \{\ 255,\ 255,\ 255,\ 255\ \});}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#pragma\ region\ Labolatorium3\ -\/\ zad4,5}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_primitive_renderer_a31a89658ce415c8513501601a99c8405}{floodFill}}(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ SDL\_Color\ targetColor,\ SDL\_Color\ fillColor);}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//translate}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ translatePolylinePoints(SDL\_Renderer*\ renderer,\ std::vector<Point2D>\&\ points,\ \textcolor{keywordtype}{bool}\ closed,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ translatePolygonPoints(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ vertices,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\textcolor{keyword}{override};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ translateEllipse(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ RX,\ \textcolor{keywordtype}{int}\ RY,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\textcolor{keyword}{override};}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//scale}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ scalePolylinePoints(SDL\_Renderer*\ renderer,\ std::vector<Point2D>\&\ points,\ \textcolor{keywordtype}{bool}\ closed,\ SDL\_Color\ color,\ \textcolor{keywordtype}{double}\ k)\textcolor{keyword}{override};}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ scalePolygonPoints(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ vertices,\ SDL\_Color\ color,\ \textcolor{keywordtype}{double}\ k)\textcolor{keyword}{override};}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ scaleEllipse(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ RX,\ \textcolor{keywordtype}{int}\ RY,\ SDL\_Color\ color,\ \textcolor{keywordtype}{double}\ k)\textcolor{keyword}{override};}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//rotate}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ rotatePolylinePoints(SDL\_Renderer*\ renderer,\ std::vector<Point2D>\&\ points,\ \textcolor{keywordtype}{bool}\ closed,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ a)\textcolor{keyword}{override};}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ rotatePolygonPoints(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ vertices,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ a)\textcolor{keyword}{override};}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ rotateEllipse(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ RX,\ \textcolor{keywordtype}{int}\ RY,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ a)\textcolor{keyword}{override};}
+\DoxyCodeLine{00146\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

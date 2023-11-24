@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Plik źródłowy PrimitiveRenderer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PrimitiveRenderer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef PRIMITIVERENDERER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define PRIMITIVERENDERER_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Point2D.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;LineSegment.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;GameObject.cpp&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_primitive_renderer.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_primitive_renderer.html">PrimitiveRenderer</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_shape_object.html">ShapeObject</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    SDL_Rect rect;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma region  Labolatorium2 - zad2</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#af0629cdda2fc354853bb408566118027">Draw</a>(SDL_Renderer* renderer, SDL_Rect rect1, SDL_Color color) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#pragma region Labolatorium2 - zad3</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#a29d1ee8e4a6fe7b0f60e1668e09a8124">RysLinie</a>(SDL_Renderer* renderer, <span class="keywordtype">int</span> x0, <span class="keywordtype">int</span> y0, <span class="keywordtype">int</span> x1, <span class="keywordtype">int</span> y1, SDL_Color color);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#pragma region Labolatorium2 - zad6</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#a15b72d4d64080a97830f636ec8eb4456">DrawPolyline</a>(SDL_Renderer* renderer, <span class="keyword">const</span> std::vector&lt;Point2D&gt;&amp; points, <span class="keywordtype">bool</span> closed = <span class="keyword">false</span>, SDL_Color color = { 255, 255, 255, 255 });</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#a2b406b53e0fa77360c2d25c2a911c724">DrawPolyline2</a>(SDL_Renderer* renderer, <span class="keyword">const</span> std::vector&lt;LineSegment&gt;&amp; segments, <span class="keywordtype">bool</span> closed, SDL_Color color = { 255, 255, 255, 255 });</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#pragma region Labolatorium3 - zad1</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#a2a603022efd8d45bda1a224d2db9a904">DrawCircle4Symmetry</a>(SDL_Renderer* renderer, <span class="keywordtype">int</span> x0, <span class="keywordtype">int</span> y0, <span class="keywordtype">int</span> R, SDL_Color color = { 255, 255, 255, 255 });</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#pragma region Labolatorium3 - zad2</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#aeee351b1021ae6f3d9ba5b5d9caaad5b">DrawEllipse</a>(SDL_Renderer* renderer, <span class="keywordtype">int</span> x0, <span class="keywordtype">int</span> y0, <span class="keywordtype">int</span> RX, <span class="keywordtype">int</span> RY, SDL_Color color = { 255, 255, 255, 255 });</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#pragma region Labolatorium3 - zad3</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#aefe1f2982872c2b4174e4867870d1282">DrawPolygon</a>(SDL_Renderer* renderer, <span class="keyword">const</span> std::vector&lt;Point2D&gt;&amp; vertices, SDL_Color color = { 255, 255, 255, 255 });</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#a4f82d3b8b6d2edcc4eb5e079690c40dd">DrawPolygon2</a>(SDL_Renderer* renderer, <span class="keyword">const</span> std::vector&lt;LineSegment&gt;&amp; segments, SDL_Color color = { 255, 255, 255, 255 });</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#pragma region Labolatorium3 - zad4,5</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_primitive_renderer.html#a31a89658ce415c8513501601a99c8405">floodFill</a>(SDL_Renderer* renderer, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, SDL_Color targetColor, SDL_Color fillColor);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">//translate</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">void</span> translatePolylinePoints(SDL_Renderer* renderer, std::vector&lt;Point2D&gt;&amp; points, <span class="keywordtype">bool</span> closed, SDL_Color color, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">void</span> translatePolygonPoints(SDL_Renderer* renderer, <span class="keyword">const</span> std::vector&lt;Point2D&gt;&amp; vertices, SDL_Color color, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordtype">void</span> translateEllipse(SDL_Renderer* renderer, <span class="keywordtype">int</span> x0, <span class="keywordtype">int</span> y0, <span class="keywordtype">int</span> RX, <span class="keywordtype">int</span> RY, SDL_Color color, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">//scale</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> scalePolylinePoints(SDL_Renderer* renderer, std::vector&lt;Point2D&gt;&amp; points, <span class="keywordtype">bool</span> closed, SDL_Color color, <span class="keywordtype">double</span> k)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">void</span> scalePolygonPoints(SDL_Renderer* renderer, <span class="keyword">const</span> std::vector&lt;Point2D&gt;&amp; vertices, SDL_Color color, <span class="keywordtype">double</span> k)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordtype">void</span> scaleEllipse(SDL_Renderer* renderer, <span class="keywordtype">int</span> x0, <span class="keywordtype">int</span> y0, <span class="keywordtype">int</span> RX, <span class="keywordtype">int</span> RY, SDL_Color color, <span class="keywordtype">double</span> k)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="comment">//rotate</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> rotatePolylinePoints(SDL_Renderer* renderer, std::vector&lt;Point2D&gt;&amp; points, <span class="keywordtype">bool</span> closed, SDL_Color color, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">long</span> <span class="keywordtype">double</span> a)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> rotatePolygonPoints(SDL_Renderer* renderer, <span class="keyword">const</span> std::vector&lt;Point2D&gt;&amp; vertices, SDL_Color color, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">long</span> <span class="keywordtype">double</span> a)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordtype">void</span> rotateEllipse(SDL_Renderer* renderer, <span class="keywordtype">int</span> x0, <span class="keywordtype">int</span> y0, <span class="keywordtype">int</span> RX, <span class="keywordtype">int</span> RY, SDL_Color color, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">long</span> <span class="keywordtype">double</span> a)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>};</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_primitive_renderer_html"><div class="ttname"><a href="class_primitive_renderer.html">PrimitiveRenderer</a></div><div class="ttdoc">Klasa PrimitiveRenderer dziedziczaca po ShapeObject.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.h:17</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_a15b72d4d64080a97830f636ec8eb4456"><div class="ttname"><a href="class_primitive_renderer.html#a15b72d4d64080a97830f636ec8eb4456">PrimitiveRenderer::DrawPolyline</a></div><div class="ttdeci">void DrawPolyline(SDL_Renderer *renderer, const std::vector&lt; Point2D &gt; &amp;points, bool closed=false, SDL_Color color={ 255, 255, 255, 255 })</div><div class="ttdoc">Labolatorium2 - zad6.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:67</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_a29d1ee8e4a6fe7b0f60e1668e09a8124"><div class="ttname"><a href="class_primitive_renderer.html#a29d1ee8e4a6fe7b0f60e1668e09a8124">PrimitiveRenderer::RysLinie</a></div><div class="ttdeci">void RysLinie(SDL_Renderer *renderer, int x0, int y0, int x1, int y1, SDL_Color color)</div><div class="ttdoc">Labolatorium2 - zad3.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:16</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_a2a603022efd8d45bda1a224d2db9a904"><div class="ttname"><a href="class_primitive_renderer.html#a2a603022efd8d45bda1a224d2db9a904">PrimitiveRenderer::DrawCircle4Symmetry</a></div><div class="ttdeci">void DrawCircle4Symmetry(SDL_Renderer *renderer, int x0, int y0, int R, SDL_Color color={ 255, 255, 255, 255 })</div><div class="ttdoc">Labolatorium3 - zad1.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:106</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_a2b406b53e0fa77360c2d25c2a911c724"><div class="ttname"><a href="class_primitive_renderer.html#a2b406b53e0fa77360c2d25c2a911c724">PrimitiveRenderer::DrawPolyline2</a></div><div class="ttdeci">void DrawPolyline2(SDL_Renderer *renderer, const std::vector&lt; LineSegment &gt; &amp;segments, bool closed, SDL_Color color={ 255, 255, 255, 255 })</div><div class="ttdoc">Labolatorium2 - zad6.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:86</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_a31a89658ce415c8513501601a99c8405"><div class="ttname"><a href="class_primitive_renderer.html#a31a89658ce415c8513501601a99c8405">PrimitiveRenderer::floodFill</a></div><div class="ttdeci">void floodFill(SDL_Renderer *renderer, int x, int y, SDL_Color targetColor, SDL_Color fillColor)</div><div class="ttdoc">Labolatorium3 - zad4,5.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:191</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_a4f82d3b8b6d2edcc4eb5e079690c40dd"><div class="ttname"><a href="class_primitive_renderer.html#a4f82d3b8b6d2edcc4eb5e079690c40dd">PrimitiveRenderer::DrawPolygon2</a></div><div class="ttdeci">void DrawPolygon2(SDL_Renderer *renderer, const std::vector&lt; LineSegment &gt; &amp;segments, SDL_Color color={ 255, 255, 255, 255 })</div><div class="ttdoc">Labolatorium3 - zad3.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:165</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_aeee351b1021ae6f3d9ba5b5d9caaad5b"><div class="ttname"><a href="class_primitive_renderer.html#aeee351b1021ae6f3d9ba5b5d9caaad5b">PrimitiveRenderer::DrawEllipse</a></div><div class="ttdeci">void DrawEllipse(SDL_Renderer *renderer, int x0, int y0, int RX, int RY, SDL_Color color={ 255, 255, 255, 255 })</div><div class="ttdoc">Labolatorium3 - zad2.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:123</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_aefe1f2982872c2b4174e4867870d1282"><div class="ttname"><a href="class_primitive_renderer.html#aefe1f2982872c2b4174e4867870d1282">PrimitiveRenderer::DrawPolygon</a></div><div class="ttdeci">void DrawPolygon(SDL_Renderer *renderer, const std::vector&lt; Point2D &gt; &amp;vertices, SDL_Color color={ 255, 255, 255, 255 })</div><div class="ttdoc">Labolatorium3 - zad3.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:145</div></div>
+<div class="ttc" id="aclass_primitive_renderer_html_af0629cdda2fc354853bb408566118027"><div class="ttname"><a href="class_primitive_renderer.html#af0629cdda2fc354853bb408566118027">PrimitiveRenderer::Draw</a></div><div class="ttdeci">void Draw(SDL_Renderer *renderer, SDL_Rect rect1, SDL_Color color) override</div><div class="ttdoc">Labolatorium2 - zad2.</div><div class="ttdef"><b>Definition</b> PrimitiveRenderer.cpp:8</div></div>
+<div class="ttc" id="aclass_shape_object_html"><div class="ttname"><a href="class_shape_object.html">ShapeObject</a></div><div class="ttdef"><b>Definition</b> GameObject.cpp:59</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

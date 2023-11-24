@@ -1,0 +1,54 @@
+\doxysection{Dokumentacja klasy Rectangle}
+\hypertarget{class_rectangle}{}\label{class_rectangle}\index{Rectangle@{Rectangle}}
+Diagram dziedziczenia dla Rectangle\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_rectangle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_rectangle_a17bb76d1851a4744fa27838944c8bba3}\label{class_rectangle_a17bb76d1851a4744fa27838944c8bba3} 
+void {\bfseries draw} () const override
+\item 
+\Hypertarget{class_rectangle_aa44e544bffbd8dc99a536bbb0970ad35}\label{class_rectangle_aa44e544bffbd8dc99a536bbb0970ad35} 
+void {\bfseries translate} (float x, float y) override
+\item 
+\Hypertarget{class_rectangle_ab8392c3fbd5834172c827b099bfba826}\label{class_rectangle_ab8392c3fbd5834172c827b099bfba826} 
+void {\bfseries rotate} (float angle) override
+\item 
+\Hypertarget{class_rectangle_aa2905870e0a46b3ef38a4cf445b4a2b3}\label{class_rectangle_aa2905870e0a46b3ef38a4cf445b4a2b3} 
+void {\bfseries scale} (float factor) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_drawable_object}{Drawable\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_drawable_object_af8d7badb58f8903bc2eacbe92e7ed55e}{Draw}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, SDL\+\_\+\+Rect rect1, SDL\+\_\+\+Color color)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries translate\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+virtual void {\bfseries translate\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+virtual void {\bfseries translate\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+virtual void {\bfseries scale\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, double k)=0
+\item 
+virtual void {\bfseries scale\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, double k)=0
+\item 
+virtual void {\bfseries scale\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, double k)=0
+\item 
+virtual void {\bfseries rotate\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\item 
+virtual void {\bfseries rotate\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\item 
+virtual void {\bfseries rotate\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\end{DoxyCompactItemize}
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Rectangle.\+cpp\end{DoxyCompactItemize}

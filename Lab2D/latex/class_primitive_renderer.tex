@@ -1,0 +1,381 @@
+\doxysection{Dokumentacja klasy Primitive\+Renderer}
+\hypertarget{class_primitive_renderer}{}\label{class_primitive_renderer}\index{PrimitiveRenderer@{PrimitiveRenderer}}
+
+
+Klasa \doxylink{class_primitive_renderer}{Primitive\+Renderer} dziedziczaca po \doxylink{class_shape_object}{Shape\+Object}.  
+
+
+
+
+{\ttfamily \#include $<$Primitive\+Renderer.\+h$>$}
+
+Diagram dziedziczenia dla Primitive\+Renderer\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_primitive_renderer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_af0629cdda2fc354853bb408566118027}{Draw}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, SDL\+\_\+\+Rect rect1, SDL\+\_\+\+Color color) override
+\begin{DoxyCompactList}\small\item\em Labolatorium2 -\/ zad2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_a29d1ee8e4a6fe7b0f60e1668e09a8124}{Rys\+Linie}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int x1, int y1, SDL\+\_\+\+Color color)
+\begin{DoxyCompactList}\small\item\em Labolatorium2 -\/ zad3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_a15b72d4d64080a97830f636ec8eb4456}{Draw\+Polyline}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed=false, SDL\+\_\+\+Color color=\{ 255, 255, 255, 255 \})
+\begin{DoxyCompactList}\small\item\em Labolatorium2 -\/ zad6. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_a2b406b53e0fa77360c2d25c2a911c724}{Draw\+Polyline2}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_line_segment}{Line\+Segment}} $>$ \&segments, bool closed, SDL\+\_\+\+Color color=\{ 255, 255, 255, 255 \})
+\begin{DoxyCompactList}\small\item\em Labolatorium2 -\/ zad6. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_a2a603022efd8d45bda1a224d2db9a904}{Draw\+Circle4\+Symmetry}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int R, SDL\+\_\+\+Color color=\{ 255, 255, 255, 255 \})
+\begin{DoxyCompactList}\small\item\em Labolatorium3 -\/ zad1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_aeee351b1021ae6f3d9ba5b5d9caaad5b}{Draw\+Ellipse}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color=\{ 255, 255, 255, 255 \})
+\begin{DoxyCompactList}\small\item\em Labolatorium3 -\/ zad2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_aefe1f2982872c2b4174e4867870d1282}{Draw\+Polygon}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color=\{ 255, 255, 255, 255 \})
+\begin{DoxyCompactList}\small\item\em Labolatorium3 -\/ zad3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_a4f82d3b8b6d2edcc4eb5e079690c40dd}{Draw\+Polygon2}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_line_segment}{Line\+Segment}} $>$ \&segments, SDL\+\_\+\+Color color=\{ 255, 255, 255, 255 \})
+\begin{DoxyCompactList}\small\item\em Labolatorium3 -\/ zad3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_a31a89658ce415c8513501601a99c8405}{flood\+Fill}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x, int y, SDL\+\_\+\+Color target\+Color, SDL\+\_\+\+Color fill\+Color)
+\begin{DoxyCompactList}\small\item\em Labolatorium3 -\/ zad4,5. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_primitive_renderer_a0f28d7288e937838a9389087b704bd57}{translate\+Polyline\+Points}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_aff1514ea5ba14f53a353e7f9f72f004b}{translate\+Polygon\+Points}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_a1859cb2242fcf7550467727d3f9bd754}{translate\+Ellipse}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_a9383a792c8d8fad4e7c148e31807478e}{scale\+Polyline\+Points}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, double k) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_ab8d29a1343c2c57c1b90482fa15f2094}{scale\+Polygon\+Points}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, double k) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_a05f25b88f9f6b6889b6ef5a639fd1cb0}{scale\+Ellipse}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, double k) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_a0f4d5cc22530a8bc7fea9b8d3ac96996}{rotate\+Polyline\+Points}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y, long double a) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_a56f5c370e4df1c7e2346d199748f9757}{rotate\+Polygon\+Points}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y, long double a) override
+\item 
+void \mbox{\hyperlink{class_primitive_renderer_a8d5ad496fffad001eb5210ab16683edd}{rotate\+Ellipse}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y, long double a) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_primitive_renderer_adc8c0365454c98f09fdc22a793e9590f}\label{class_primitive_renderer_adc8c0365454c98f09fdc22a793e9590f} 
+SDL\+\_\+\+Rect {\bfseries rect}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Klasa \doxylink{class_primitive_renderer}{Primitive\+Renderer} dziedziczaca po \doxylink{class_shape_object}{Shape\+Object}. 
+
+\doxysubsection{Dokumentacja funkcji skÅ‚adowych}
+\Hypertarget{class_primitive_renderer_af0629cdda2fc354853bb408566118027}\label{class_primitive_renderer_af0629cdda2fc354853bb408566118027} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!Draw@{Draw}}
+\index{Draw@{Draw}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Draw (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{SDL\+\_\+\+Rect}]{rect1,  }\item[{SDL\+\_\+\+Color}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Labolatorium2 -\/ zad2. 
+
+Metoda rysujaca primitywy
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & Wskaznik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em rect1} & strunktura reprezentuj¹ca prostok¹t (przechowuje rozmiar oraz wspolrzedne). \\
+\hline
+{\em color} & przechowuje informacje o kolorze. \\
+\hline
+\end{DoxyParams}
+
+
+Implementuje \mbox{\hyperlink{class_drawable_object}{Drawable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_a2a603022efd8d45bda1a224d2db9a904}\label{class_primitive_renderer_a2a603022efd8d45bda1a224d2db9a904} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!DrawCircle4Symmetry@{DrawCircle4Symmetry}}
+\index{DrawCircle4Symmetry@{DrawCircle4Symmetry}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawCircle4Symmetry()}{DrawCircle4Symmetry()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Draw\+Circle4\+Symmetry (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{R,  }\item[{SDL\+\_\+\+Color}]{color = {\ttfamily \{~255,~255,~255,~255~\}} }\end{DoxyParamCaption})}
+
+
+
+Labolatorium3 -\/ zad1. 
+
+Metoda rysuj¹ca okr¹g algorytmem przedstawionym w instruckji przy u¿yciu 4-\/krotnej symetrii.
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & WskaŸnik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em x0} & Wspó³rzêdna x œrodka okrêgu. \\
+\hline
+{\em y0} & Wspó³rzêdna y œrodka okrêgu. \\
+\hline
+{\em R} & Promieñ okrêgu. \\
+\hline
+{\em color} & Kolor okrêgu. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_aeee351b1021ae6f3d9ba5b5d9caaad5b}\label{class_primitive_renderer_aeee351b1021ae6f3d9ba5b5d9caaad5b} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!DrawEllipse@{DrawEllipse}}
+\index{DrawEllipse@{DrawEllipse}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawEllipse()}{DrawEllipse()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Draw\+Ellipse (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{RX,  }\item[{int}]{RY,  }\item[{SDL\+\_\+\+Color}]{color = {\ttfamily \{~255,~255,~255,~255~\}} }\end{DoxyParamCaption})}
+
+
+
+Labolatorium3 -\/ zad2. 
+
+Metoda rysuj¹ca elipsê algorytmem przedstawionym w instruckji przy u¿yciu 4-\/krotnej symetrii.
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & WskaŸnik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em x0} & Wspó³rzêdna x œrodka elipsy. \\
+\hline
+{\em y0} & Wspó³rzêdna y œrodka elipsy. \\
+\hline
+{\em RX} & Pó³oœ wzd³u¿ osi x. \\
+\hline
+{\em RY} & Pó³oœ wzd³u¿ osi y. \\
+\hline
+{\em color} & Kolor elipsy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_aefe1f2982872c2b4174e4867870d1282}\label{class_primitive_renderer_aefe1f2982872c2b4174e4867870d1282} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!DrawPolygon@{DrawPolygon}}
+\index{DrawPolygon@{DrawPolygon}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawPolygon()}{DrawPolygon()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Draw\+Polygon (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{vertices,  }\item[{SDL\+\_\+\+Color}]{color = {\ttfamily \{~255,~255,~255,~255~\}} }\end{DoxyParamCaption})}
+
+
+
+Labolatorium3 -\/ zad3. 
+
+Metoda rysuj¹ca wielok¹t na podstawie punktów \doxylink{class_point2_d}{Point2D}.
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & WskaŸnik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em vertices} & Wektor wierzcho³ków wielok¹ta. \\
+\hline
+{\em color} & Kolor wielok¹ta. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_a4f82d3b8b6d2edcc4eb5e079690c40dd}\label{class_primitive_renderer_a4f82d3b8b6d2edcc4eb5e079690c40dd} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!DrawPolygon2@{DrawPolygon2}}
+\index{DrawPolygon2@{DrawPolygon2}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawPolygon2()}{DrawPolygon2()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Draw\+Polygon2 (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_line_segment}{Line\+Segment}} $>$ \&}]{segments,  }\item[{SDL\+\_\+\+Color}]{color = {\ttfamily \{~255,~255,~255,~255~\}} }\end{DoxyParamCaption})}
+
+
+
+Labolatorium3 -\/ zad3. 
+
+Metoda rysujaca wielokat na podstawie odcinkow z wektora \doxylink{class_line_segment}{Line\+Segment}.
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & Wskaznik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em segments} & Wektor odcinkow \doxylink{class_line_segment}{Line\+Segment} do narysowania. \\
+\hline
+{\em color} & Kolor odcinków. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_a15b72d4d64080a97830f636ec8eb4456}\label{class_primitive_renderer_a15b72d4d64080a97830f636ec8eb4456} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!DrawPolyline@{DrawPolyline}}
+\index{DrawPolyline@{DrawPolyline}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawPolyline()}{DrawPolyline()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Draw\+Polyline (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{points,  }\item[{bool}]{closed = {\ttfamily false},  }\item[{SDL\+\_\+\+Color}]{color = {\ttfamily \{~255,~255,~255,~255~\}} }\end{DoxyParamCaption})}
+
+
+
+Labolatorium2 -\/ zad6. 
+
+Metoda rysujaca linie lamana otwarta lub zamknieta przyjujaca zbiór punktów typu \doxylink{class_point2_d}{Point2D}
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & Wskaznik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em points} & Wektor punktów \doxylink{class_point2_d}{Point2D} do po³¹czenia odcinkami. \\
+\hline
+{\em closed} & Informacja, czy lamana jest zamknieta. \\
+\hline
+{\em color} & Kolor odcinkow. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_a2b406b53e0fa77360c2d25c2a911c724}\label{class_primitive_renderer_a2b406b53e0fa77360c2d25c2a911c724} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!DrawPolyline2@{DrawPolyline2}}
+\index{DrawPolyline2@{DrawPolyline2}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawPolyline2()}{DrawPolyline2()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Draw\+Polyline2 (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_line_segment}{Line\+Segment}} $>$ \&}]{segments,  }\item[{bool}]{closed,  }\item[{SDL\+\_\+\+Color}]{color = {\ttfamily \{~255,~255,~255,~255~\}} }\end{DoxyParamCaption})}
+
+
+
+Labolatorium2 -\/ zad6. 
+
+Metoda rysujaca linie lamana otwarta lub zamknieta na podstawie odcinków z wektora \doxylink{class_line_segment}{Line\+Segment}.
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & WskaŸnik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em segments} & Wektor odcinków \doxylink{class_line_segment}{Line\+Segment} do narysowania. \\
+\hline
+{\em closed} & Informacja, czy lamana jest zamknieta. \\
+\hline
+{\em color} & Kolor odcinków. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_a31a89658ce415c8513501601a99c8405}\label{class_primitive_renderer_a31a89658ce415c8513501601a99c8405} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!floodFill@{floodFill}}
+\index{floodFill@{floodFill}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{floodFill()}{floodFill()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::flood\+Fill (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{SDL\+\_\+\+Color}]{target\+Color,  }\item[{SDL\+\_\+\+Color}]{fill\+Color }\end{DoxyParamCaption})}
+
+
+
+Labolatorium3 -\/ zad4,5. 
+
+Metoda wype³niaj¹ca obszar algorytmem przez spojnosc Flood\+Fill.
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & WskaŸnik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em x} & Wspó³rzêdna x punktu startowego. \\
+\hline
+{\em y} & Wspó³rzêdna y punktu startowego. \\
+\hline
+{\em target\+Color} & Kolor obszaru do zast¹pienia. \\
+\hline
+{\em fill\+Color} & Kolor, którym ma zostaæ wype³niony obszar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_a8d5ad496fffad001eb5210ab16683edd}\label{class_primitive_renderer_a8d5ad496fffad001eb5210ab16683edd} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!rotateEllipse@{rotateEllipse}}
+\index{rotateEllipse@{rotateEllipse}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{rotateEllipse()}{rotateEllipse()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::rotate\+Ellipse (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{RX,  }\item[{int}]{RY,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{long double}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_a56f5c370e4df1c7e2346d199748f9757}\label{class_primitive_renderer_a56f5c370e4df1c7e2346d199748f9757} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!rotatePolygonPoints@{rotatePolygonPoints}}
+\index{rotatePolygonPoints@{rotatePolygonPoints}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{rotatePolygonPoints()}{rotatePolygonPoints()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::rotate\+Polygon\+Points (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{vertices,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{long double}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_a0f4d5cc22530a8bc7fea9b8d3ac96996}\label{class_primitive_renderer_a0f4d5cc22530a8bc7fea9b8d3ac96996} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!rotatePolylinePoints@{rotatePolylinePoints}}
+\index{rotatePolylinePoints@{rotatePolylinePoints}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{rotatePolylinePoints()}{rotatePolylinePoints()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::rotate\+Polyline\+Points (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{points,  }\item[{bool}]{closed,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{long double}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_a29d1ee8e4a6fe7b0f60e1668e09a8124}\label{class_primitive_renderer_a29d1ee8e4a6fe7b0f60e1668e09a8124} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!RysLinie@{RysLinie}}
+\index{RysLinie@{RysLinie}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{RysLinie()}{RysLinie()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::\+Rys\+Linie (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{SDL\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Labolatorium2 -\/ zad3. 
+
+Metoda rysujaca odcinek wykorzystujaca algorytm przyrostowy
+
+
+\begin{DoxyParams}{Parametry}
+{\em renderer} & WskaŸnik do obiektu SDL\+\_\+\+Renderer. \\
+\hline
+{\em x0} & Wspó³rzêdna x punktu pocz¹tkowego. \\
+\hline
+{\em y0} & Wspó³rzêdna y punktu pocz¹tkowego. \\
+\hline
+{\em x1} & Wspó³rzêdna x punktu koñcowego. \\
+\hline
+{\em y1} & Wspó³rzêdna y punktu koñcowego. \\
+\hline
+{\em color} & Kolor odcinka. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_primitive_renderer_a05f25b88f9f6b6889b6ef5a639fd1cb0}\label{class_primitive_renderer_a05f25b88f9f6b6889b6ef5a639fd1cb0} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!scaleEllipse@{scaleEllipse}}
+\index{scaleEllipse@{scaleEllipse}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{scaleEllipse()}{scaleEllipse()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::scale\+Ellipse (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{RX,  }\item[{int}]{RY,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_ab8d29a1343c2c57c1b90482fa15f2094}\label{class_primitive_renderer_ab8d29a1343c2c57c1b90482fa15f2094} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!scalePolygonPoints@{scalePolygonPoints}}
+\index{scalePolygonPoints@{scalePolygonPoints}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{scalePolygonPoints()}{scalePolygonPoints()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::scale\+Polygon\+Points (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{vertices,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_a9383a792c8d8fad4e7c148e31807478e}\label{class_primitive_renderer_a9383a792c8d8fad4e7c148e31807478e} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!scalePolylinePoints@{scalePolylinePoints}}
+\index{scalePolylinePoints@{scalePolylinePoints}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{scalePolylinePoints()}{scalePolylinePoints()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::scale\+Polyline\+Points (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{points,  }\item[{bool}]{closed,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_a1859cb2242fcf7550467727d3f9bd754}\label{class_primitive_renderer_a1859cb2242fcf7550467727d3f9bd754} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!translateEllipse@{translateEllipse}}
+\index{translateEllipse@{translateEllipse}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{translateEllipse()}{translateEllipse()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::translate\+Ellipse (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{RX,  }\item[{int}]{RY,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_aff1514ea5ba14f53a353e7f9f72f004b}\label{class_primitive_renderer_aff1514ea5ba14f53a353e7f9f72f004b} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!translatePolygonPoints@{translatePolygonPoints}}
+\index{translatePolygonPoints@{translatePolygonPoints}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{translatePolygonPoints()}{translatePolygonPoints()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::translate\+Polygon\+Points (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{vertices,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+\Hypertarget{class_primitive_renderer_a0f28d7288e937838a9389087b704bd57}\label{class_primitive_renderer_a0f28d7288e937838a9389087b704bd57} 
+\index{PrimitiveRenderer@{PrimitiveRenderer}!translatePolylinePoints@{translatePolylinePoints}}
+\index{translatePolylinePoints@{translatePolylinePoints}!PrimitiveRenderer@{PrimitiveRenderer}}
+\doxysubsubsection{\texorpdfstring{translatePolylinePoints()}{translatePolylinePoints()}}
+{\footnotesize\ttfamily void Primitive\+Renderer\+::translate\+Polyline\+Points (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&}]{points,  }\item[{bool}]{closed,  }\item[{SDL\+\_\+\+Color}]{color,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementuje \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}.
+
+
+
+Dokumentacja dla tej klasy zostaÅ‚a wygenerowana z plikÃ³w\+:\begin{DoxyCompactItemize}
+\item 
+Primitive\+Renderer.\+h\item 
+\mbox{\hyperlink{_primitive_renderer_8cpp}{Primitive\+Renderer.\+cpp}}\end{DoxyCompactItemize}

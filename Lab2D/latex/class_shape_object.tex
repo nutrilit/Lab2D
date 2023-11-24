@@ -1,0 +1,40 @@
+\doxysection{Dokumentacja klasy Shape\+Object}
+\hypertarget{class_shape_object}{}\label{class_shape_object}\index{ShapeObject@{ShapeObject}}
+Diagram dziedziczenia dla Shape\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_shape_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Dodatkowe Dziedziczone Składowe}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_drawable_object}{Drawable\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_drawable_object_af8d7badb58f8903bc2eacbe92e7ed55e}{Draw}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, SDL\+\_\+\+Rect rect1, SDL\+\_\+\+Color color)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_transformable_object}{Transformable\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries translate\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+virtual void {\bfseries translate\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+virtual void {\bfseries translate\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+virtual void {\bfseries scale\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, double k)=0
+\item 
+virtual void {\bfseries scale\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, double k)=0
+\item 
+virtual void {\bfseries scale\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, double k)=0
+\item 
+virtual void {\bfseries rotate\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\item 
+virtual void {\bfseries rotate\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\item 
+virtual void {\bfseries rotate\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\end{DoxyCompactItemize}
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Object.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\doxysection{Dokumentacja klasy Transformable\+Object}
+\hypertarget{class_transformable_object}{}\label{class_transformable_object}\index{TransformableObject@{TransformableObject}}
+Diagram dziedziczenia dla Transformable\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_transformable_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_transformable_object_a43636009596fd61cb37d9b719d539e88}\label{class_transformable_object_a43636009596fd61cb37d9b719d539e88} 
+virtual void {\bfseries translate\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+\Hypertarget{class_transformable_object_ae8d159af759b4b2de138ba79ef091a59}\label{class_transformable_object_ae8d159af759b4b2de138ba79ef091a59} 
+virtual void {\bfseries translate\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+\Hypertarget{class_transformable_object_aadc73af8dc473445dd95fc6c0e1f6b62}\label{class_transformable_object_aadc73af8dc473445dd95fc6c0e1f6b62} 
+virtual void {\bfseries translate\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y)=0
+\item 
+\Hypertarget{class_transformable_object_af9b102ee16bdc4695eabe33eb1c88b29}\label{class_transformable_object_af9b102ee16bdc4695eabe33eb1c88b29} 
+virtual void {\bfseries scale\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, double k)=0
+\item 
+\Hypertarget{class_transformable_object_aa8896dd9ef8a0e859f3b6f5de7904918}\label{class_transformable_object_aa8896dd9ef8a0e859f3b6f5de7904918} 
+virtual void {\bfseries scale\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, double k)=0
+\item 
+\Hypertarget{class_transformable_object_a201f3e1dab3c644aaa1afed6991ced0d}\label{class_transformable_object_a201f3e1dab3c644aaa1afed6991ced0d} 
+virtual void {\bfseries scale\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, double k)=0
+\item 
+\Hypertarget{class_transformable_object_a896f0f0c66f0cb09bc05503d76539dc0}\label{class_transformable_object_a896f0f0c66f0cb09bc05503d76539dc0} 
+virtual void {\bfseries rotate\+Polyline\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&points, bool closed, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\item 
+\Hypertarget{class_transformable_object_a87c48a80f80a803df95d1549396f4f4b}\label{class_transformable_object_a87c48a80f80a803df95d1549396f4f4b} 
+virtual void {\bfseries rotate\+Polygon\+Points} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::vector$<$ \mbox{\hyperlink{class_point2_d}{Point2D}} $>$ \&vertices, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\item 
+\Hypertarget{class_transformable_object_a51a8d1b48428275e91b4c80a25c0e5f5}\label{class_transformable_object_a51a8d1b48428275e91b4c80a25c0e5f5} 
+virtual void {\bfseries rotate\+Ellipse} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, int x0, int y0, int RX, int RY, SDL\+\_\+\+Color color, int x, int y, long double a)=0
+\end{DoxyCompactItemize}
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Object.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+\doxysection{Game\+Object.\+cpp}
+\hypertarget{_game_object_8cpp_source}{}\label{_game_object_8cpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Point2D.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ (a)\ Klasa\ GameObject}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_object}{GameObject}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_game_object}{\string~GameObject}}()\ \{\}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Metody\ czysto\ wirtualne}}
+\DoxyCodeLine{00012\ \ \ \ \textcolor{comment}{//\ virtual\ void\ update()\ =\ 0;}}
+\DoxyCodeLine{00013\ \ \ \ \textcolor{comment}{//\ virtual\ void\ draw()\ const\ =\ 0;}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Metoda\ z\ cia³em\ (mo¿e\ byæ nadpisana)}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ start()\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}GameObject\ started."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ (b)\ Klasa\ UpdatableObject}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_updatable_object}{UpdatableObject}}\ \ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_updatable_object}{\string~UpdatableObject}}()\ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Abstrakcyjna\ metoda\ update()}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ update()\ =\ 0;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ (c)\ Klasa\ DrawableObject}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_drawable_object}{DrawableObject}}\ \ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_drawable_object}{\string~DrawableObject}}()\ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Abstrakcyjna\ metoda\ draw()}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Draw(SDL\_Renderer*\ renderer,\ SDL\_Rect\ rect1,\ SDL\_Color\ color)=\ 0;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ (d)\ Klasa\ TransformableObject}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_transformable_object}{TransformableObject}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_transformable_object}{\string~TransformableObject}}()\ \{\}}
+\DoxyCodeLine{00042\ \ \ \ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Abstrakcyjne\ metody\ translate(),\ rotate()\ i\ scale()}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ translatePolylinePoints(SDL\_Renderer*\ renderer,\ std::vector<Point2D>\&\ points,\ \textcolor{keywordtype}{bool}\ closed,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ translatePolygonPoints(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ vertices,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ translateEllipse(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ RX,\ \textcolor{keywordtype}{int}\ RY,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//scale}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ scalePolylinePoints(SDL\_Renderer*\ renderer,\ std::vector<Point2D>\&\ points,\ \textcolor{keywordtype}{bool}\ closed,\ SDL\_Color\ color,\ \textcolor{keywordtype}{double}\ k)\ =\ 0;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ scalePolygonPoints(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ vertices,\ SDL\_Color\ color,\ \textcolor{keywordtype}{double}\ k)\ =\ 0;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ scaleEllipse(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ RX,\ \textcolor{keywordtype}{int}\ RY,\ SDL\_Color\ color,\ \textcolor{keywordtype}{double}\ k)\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//rotate}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ rotatePolylinePoints(SDL\_Renderer*\ renderer,\ std::vector<Point2D>\&\ points,\ \textcolor{keywordtype}{bool}\ closed,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ a)\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ rotatePolygonPoints(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ std::vector<Point2D>\&\ vertices,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ a)\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ rotateEllipse(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ RX,\ \textcolor{keywordtype}{int}\ RY,\ SDL\_Color\ color,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ a)\ =\ 0;}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ (e)\ Klasa\ ShapeObject}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shape_object}{ShapeObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_drawable_object}{DrawableObject}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_transformable_object}{TransformableObject}}\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_shape_object}{\string~ShapeObject}}()\ \{\}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Dziedziczone\ metody\ z\ DrawableObject\ i\ TransformableObject}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Metody\ te\ s¹\ abstrakcyjne,\ wiêc musz¹\ byæ nadpisane\ przez\ klasy\ pochodne}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+
+\end{DoxyCode}

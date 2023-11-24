@@ -1,0 +1,29 @@
+\doxysection{Player.\+h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ PLAYER\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}GameObject.cpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ Deklaracje\ funkcji\ i\ zmiennej\ cz³onkowskich}}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}();}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveCoordinates(\textcolor{keywordtype}{int}\ nx,\ \textcolor{keywordtype}{int}\ ny);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveLeft();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveRight();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//private:}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Zmienne\ cz³onkowskie}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y,\ width,\ height;}
+\DoxyCodeLine{00019\ \ \ \ \ SDL\_Rect\ rect;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:\ \textcolor{keywordtype}{bool}\ movementLeft;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:\ \textcolor{keywordtype}{bool}\ movementRight;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

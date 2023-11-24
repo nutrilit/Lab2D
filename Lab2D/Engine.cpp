@@ -167,6 +167,7 @@ void Engine::Run()
 
         // zad5 lab3
         //pr1.floodFill(renderer, 601, 501, czarny, zolty);
+
         frameTime = SDL_GetTicks() - frameStart;
         if (frameDelay > frameTime)
         {
