@@ -17,6 +17,10 @@ Engine::Engine(int x, int y)
     {
         exit(1);
     }
+    if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
+    {
+        exit(1);
+    }
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     if (!renderer)
@@ -65,6 +69,11 @@ void Engine::Run()
     polygonSegments.push_back(LineSegment(Point2D(500, 280), Point2D(450, 260)));
     polygonSegments.push_back(LineSegment(Point2D(370, 420), Point2D(400, 350)));
 
+    BitmapHandler bh1 = BitmapHandler();
+  
+    SDL_Texture* Tex1 = bh1.LoadTexture("Textury/alien1.png", renderer);
+    SDL_Texture** Animation1 = bh1.LoadAnimation("Animacja/Alien%d.png", renderer, 4);
+    
     while (isRunning)
     {
         //cos tam cos tam
@@ -74,7 +83,12 @@ void Engine::Run()
         //poruszanie sie gracza
         MovementHandle();
         // rysowanie gracza
-        pr1.Draw(renderer, p1.rect, czerwony);
+        //pr1.Draw(renderer, p1.rect, czerwony);
+        if(p1.movementLeft==false && p1.movementRight==false)
+        SDL_RenderCopy(renderer, Tex1, NULL, &p1.rect); 
+        if (p1.movementLeft == true || p1.movementRight == true)
+        SDL_RenderCopy(renderer, Animation1[AniFrame], NULL, &p1.rect);
+
         /* koniec gracz*/
         // rysowanie piksela w lewym gornym rogu
         //point.rys_piksel(renderer);
@@ -181,12 +195,26 @@ void Engine::MovementHandle()
         if (state[SDL_SCANCODE_LEFT])
         {
             p1.MoveLeft();
+            if (AniFrame == 3)
+            {
+                AniFrame = 0;
+            }
+            else AniFrame++;
         }
+        else
+            p1.movementLeft = false;
 
         if (state[SDL_SCANCODE_RIGHT])
         {
             p1.MoveRight();
+            if (AniFrame == 3)
+            {
+                AniFrame = 0;
+            }
+            else AniFrame++;
         }
+        else
+            p1.movementRight = false;
 }
 
 Engine::~Engine()

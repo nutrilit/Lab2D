@@ -3,12 +3,15 @@
 #define ENGINE_H
 
 #include <SDL.h>
+#include <SDL_timer.h>
 #include "Player.h"
 #include "Point2D.h"
 #include "PrimitiveRenderer.h"
 #include "LineSegment.h"
 #include <iostream>
 #include <vector>
+#include <SDL_image.h>
+#include "BitmapHandler.h"
 
 class Engine
 {
@@ -35,6 +38,7 @@ private:
     std::vector<LineSegment> polylineSegments;
     std::vector<Point2D> polygonPoints;
     std::vector<LineSegment> polygonSegments;
+    int AniFrame = 0; //aktualna klatka animacji postaci
 };
 
 #endif

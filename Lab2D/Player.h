@@ -17,6 +17,8 @@ public:
     // Zmienne cz³onkowskie
     int x, y, width, height;
     SDL_Rect rect;
+public: bool movementLeft;
+public: bool movementRight;
 };
 
 #endif
