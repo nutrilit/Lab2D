@@ -1,5 +1,6 @@
 #include "Engine.h"
 
+
 Engine::Engine(int x, int y)
 {
     this->Width = x;
@@ -29,6 +30,7 @@ Engine::Engine(int x, int y)
     }
 }
 
+
 void Engine::Run()
 {
     // obiekt  Point2D
@@ -48,9 +50,8 @@ void Engine::Run()
     int frameTime;
     float old_time = SDL_GetTicks();
     bool isRunning = true;
-    Point2D nazwa[3] = { Point2D(200,150),Point2D(20,20) ,Point2D(200,30) };
-
     
+    //punkty     
     polylinePoints.push_back(Point2D(100, 100));
     polylinePoints.push_back(Point2D(200, 200));
     polylinePoints.push_back(Point2D(300, 100));
@@ -69,31 +70,34 @@ void Engine::Run()
     polygonSegments.push_back(LineSegment(Point2D(500, 280), Point2D(450, 260)));
     polygonSegments.push_back(LineSegment(Point2D(370, 420), Point2D(400, 350)));
 
+    //tekstury
     BitmapHandler bh1 = BitmapHandler();
-  
+
     SDL_Texture* Tex1 = bh1.LoadTexture("Textury/alien1.png", renderer);
     SDL_Texture** Animation1 = bh1.LoadAnimation("Animacja/Alien%d.png", renderer, 4);
     
     while (isRunning)
     {
-        //cos tam cos tam
         // klatki
         frameStart = SDL_GetTicks();
+
         /*gracz*/
         //poruszanie sie gracza
         MovementHandle();
+
         // rysowanie gracza
         //pr1.Draw(renderer, p1.rect, czerwony);
         if(p1.movementLeft==false && p1.movementRight==false)
         SDL_RenderCopy(renderer, Tex1, NULL, &p1.rect); 
         if (p1.movementLeft == true || p1.movementRight == true)
         SDL_RenderCopy(renderer, Animation1[AniFrame], NULL, &p1.rect);
-
         /* koniec gracz*/
+
+
         // rysowanie piksela w lewym gornym rogu
         //point.rys_piksel(renderer);
         // piksel narysowany wyzej zostaje przeniesiony na prawy gorny rog
-        point.zmien_punkt(750, 20);
+        //point.zmien_punkt(750, 20);
 
         //test czy dzia³aj¹ ró¿ne k¹ty do zad3 lab2
         pr1.RysLinie(renderer, 50, 1, 50, 47, marynarkawojenna);
@@ -101,18 +105,20 @@ void Engine::Run()
         //zad5 lab2 - lineSegment
         //rysowanie odcinka przy pomocy Point2D
         line.Draw(renderer, true);
+
         // Odczytanie wspó³rzêdnych poszczególnych koñców odcinka
         Point2D start = line.GetStartPoint();
         Point2D end = line.GetEndPoint();
         /*koniec rysowania do linesegment*/ 
 
         /* Wypisanie wspó³rzêdnych poszczególnych koñców odcinka ale nie w petli zrobic
-        //int startX, startY, endX, endY;
+        int startX, startY, endX, endY;
         //start.print_xy(startX, startY);
         //end.print_xy(endX, endY);
         //std::cout << "Start point: x=" << startX << ", y=" << startY << std::endl;
         //std::cout << "End point: x=" << endX << ", y=" << endY << std::endl;
         */
+
 
         /*modyfikacja odcinka do lineSegment*/
         // Modyfikacja wspó³rzêdnych poszczególnych koñców odcinka
@@ -124,9 +130,6 @@ void Engine::Run()
         //rysowanie nowego odcinka
         line.Draw(renderer, true);
         /*koniec zad5 lab2 - lineSegment*/
-
-        // otwarta linia robiona na tablicy - chyba wywalic 
-        //pr1.Otwarta(renderer, nazwa);
 
         // lab2 zad6
         //linia ³amana otwarta na podstawie punktów

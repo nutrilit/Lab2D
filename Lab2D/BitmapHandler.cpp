@@ -1,6 +1,6 @@
-
 #include "BitmapHandler.h"
 
+#pragma region Labolatorium5 - zad1
 SDL_Texture* BitmapHandler::LoadTexture(const char* NameOfTexture, SDL_Renderer* renderer)
 {
     SDL_Surface* Image;
@@ -12,7 +12,9 @@ SDL_Texture* BitmapHandler::LoadTexture(const char* NameOfTexture, SDL_Renderer*
 
     return SDL_CreateTextureFromSurface(renderer, Image);
 }
+#pragma endregion
 
+#pragma region Labolatorium5 - zad3
 SDL_Texture** BitmapHandler::LoadAnimation(const char* NameOfTexture, SDL_Renderer* renderer, int Frames)
 {
     SDL_Texture** Animation = (SDL_Texture**)malloc(Frames * sizeof(SDL_Texture*));
@@ -26,4 +28,4 @@ SDL_Texture** BitmapHandler::LoadAnimation(const char* NameOfTexture, SDL_Render
 
     return Animation;
 }
-
+#pragma endregion
