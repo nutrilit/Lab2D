@@ -1,3 +1,7 @@
+/**
+ * @file PrimitiveRenderer.cpp
+ * @brief Implementacja klasy PrimitiveRenderer.
+ */
 #include "PrimitiveRenderer.h"
 
 #pragma region Labolatorium2 - zad2
