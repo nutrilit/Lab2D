@@ -12,6 +12,8 @@
 #include <vector>
 #include <SDL_image.h>
 #include "BitmapHandler.h"
+#include "AnimatedObject.h"
+#include "BitmapObject.h"
 
 	/**
 	 * @brief Klasa Engine reprezentuje g³ówny silnik gry.

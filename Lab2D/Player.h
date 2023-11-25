@@ -4,8 +4,9 @@
 #include <iostream>
 #include <SDL.h>
 #include "GameObject.cpp"
+#include "SpriteObject.h"
 
-class Player : public GameObject
+class Player : public GameObject, public SpriteObject
 {
 #pragma region Labolatorium2 - zad3
 public:

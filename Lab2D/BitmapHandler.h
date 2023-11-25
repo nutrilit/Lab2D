@@ -8,33 +8,6 @@
 
 class BitmapHandler
 {
-#pragma region Labolatorium5 - zad1
-	  /**
-     * @brief Labolatorium5 - zad1
-     * @brief £aduje pojedyncz¹ teksturê z pliku graficznego.
-     *
-     * @param NameOfTexture Œcie¿ka do pliku tekstury.
-     * @param renderer WskaŸnik do SDL_Renderer u¿ywanego do tworzenia tekstury.
-     * @return WskaŸnik do za³adowanej tekstury SDL_Texture.
-     */
-#pragma endregion
-
-#pragma region Labolatorium5 - zad3
-public: SDL_Texture* LoadTexture(const char* NameOfTexture, SDL_Renderer* renderer);
-
-        /**
-       * @brief  Labolatorium5 - zad3
-       * @brief  £aduje animacjê jako tablicê wskaŸników SDL_Texture.
-       * 
-       * Funkcja zak³ada, ¿e klatki animacji s¹ nazwane sekwencyjnie z indeksem jako czêœci¹ nazwy pliku.
-       * Na przyk³ad, jeœli NameOfTexture to "animacja/klatka_", zostan¹ za³adowane "animacja/klatka_0", "animacja/klatka_1", itd.
-       *
-       * @param NameOfTexture Bazowa nazwa klatek animacji.
-       * @param renderer WskaŸnik do SDL_Renderer u¿ywanego do tworzenia tekstury.
-       * @param Frames Liczba klatek w animacji.
-       * @return Tablica wskaŸników SDL_Texture reprezentuj¹ca klatki animacji.
-       */
-public: SDL_Texture** LoadAnimation(const char* NameOfTexture, SDL_Renderer* renderer, int Frames);
-#pragma endregion
-
+public: SDL_Texture* LoadTexture(const char* NameOfTexture, SDL_Renderer* renderer); //wczytaj teksture 
+public: SDL_Texture** LoadAnimation(const char* NameOfTexture, SDL_Renderer* renderer, int Frames); //wczytaj animacje
 };

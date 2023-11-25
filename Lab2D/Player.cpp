@@ -5,8 +5,8 @@ Player::Player()
 {
 	this->x = 10;
 	this->y = 10;
-	this->width = 30;
-	this->height = 30;
+	this->width = 50;
+	this->height = 50;
 	this->rect = { x, y, width, height };
 	this->movementLeft = false;
 	this->movementRight = false;

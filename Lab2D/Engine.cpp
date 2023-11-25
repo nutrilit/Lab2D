@@ -1,6 +1,5 @@
 #include "Engine.h"
 
-
 Engine::Engine(int x, int y)
 {
     this->Width = x;
@@ -30,7 +29,6 @@ Engine::Engine(int x, int y)
     }
 }
 
-
 void Engine::Run()
 {
     // obiekt  Point2D
@@ -50,8 +48,9 @@ void Engine::Run()
     int frameTime;
     float old_time = SDL_GetTicks();
     bool isRunning = true;
+    Point2D nazwa[3] = { Point2D(200,150),Point2D(20,20) ,Point2D(200,30) };
+
     
-    //punkty     
     polylinePoints.push_back(Point2D(100, 100));
     polylinePoints.push_back(Point2D(200, 200));
     polylinePoints.push_back(Point2D(300, 100));
@@ -70,34 +69,53 @@ void Engine::Run()
     polygonSegments.push_back(LineSegment(Point2D(500, 280), Point2D(450, 260)));
     polygonSegments.push_back(LineSegment(Point2D(370, 420), Point2D(400, 350)));
 
-    //tekstury
     BitmapHandler bh1 = BitmapHandler();
-
+    //³adownie tekstur i animacji z folderu
     SDL_Texture* Tex1 = bh1.LoadTexture("Textury/alien1.png", renderer);
+    SDL_Texture* Tex2 = bh1.LoadTexture("Textury/alien2.png", renderer);
+    SDL_Texture* Stay = bh1.LoadTexture("Textury/stay.png", renderer);
     SDL_Texture** Animation1 = bh1.LoadAnimation("Animacja/Alien%d.png", renderer, 4);
+    SDL_Texture** Animation2 = bh1.LoadAnimation("Animacja1/move%d.png", renderer, 6);
+    SDL_Texture* t1 = Tex1;
     
+    int tmpI = 0;
     while (isRunning)
     {
+        //tworzenie obiektów 
+        AnimatedObject a1 = AnimatedObject();
+        BitmapObject b1 = BitmapObject();
+        SpriteObject s1 = SpriteObject();
+        SDL_Rect tmp1 = { 50,50, 25,25 };
+        SDL_Rect tmp2 = { 200,50, 25,25 };
+        
+        //licznik ¿eby wywo³ywaæ animacje
+        tmpI++;
+        if (tmpI == 5)
+            tmpI = 0;
+        //narysuj teksture i animacje
+        s1.Draw(renderer, Tex2, tmp1); 
+        s1.animate(renderer, Animation2, tmp2, tmpI);
+
+        //cos tam cos tam
         // klatki
         frameStart = SDL_GetTicks();
-
         /*gracz*/
         //poruszanie sie gracza
         MovementHandle();
-
         // rysowanie gracza
         //pr1.Draw(renderer, p1.rect, czerwony);
-        if(p1.movementLeft==false && p1.movementRight==false)
-        SDL_RenderCopy(renderer, Tex1, NULL, &p1.rect); 
-        if (p1.movementLeft == true || p1.movementRight == true)
-        SDL_RenderCopy(renderer, Animation1[AniFrame], NULL, &p1.rect);
+        if (p1.movementLeft == false && p1.movementRight == false) //jeœli nie ma ruchu narysuj jak stoi w miejscu 
+            p1.Draw(renderer, Stay, p1.rect); //narysuj gracza
+        //SDL_RenderCopy(renderer, Tex1, NULL, &p1.rect); 
+        if (p1.movementLeft == true || p1.movementRight == true) //gdy siê porusza wyœwietl animacje chodzenia
+            p1.animate(renderer, Animation2, p1.rect, AniFrame);
+        //SDL_RenderCopy(renderer, Animation1[AniFrame], NULL, &p1.rect);
+
         /* koniec gracz*/
-
-
         // rysowanie piksela w lewym gornym rogu
         //point.rys_piksel(renderer);
         // piksel narysowany wyzej zostaje przeniesiony na prawy gorny rog
-        //point.zmien_punkt(750, 20);
+        point.zmien_punkt(750, 20);
 
         //test czy dzia³aj¹ ró¿ne k¹ty do zad3 lab2
         pr1.RysLinie(renderer, 50, 1, 50, 47, marynarkawojenna);
@@ -105,20 +123,18 @@ void Engine::Run()
         //zad5 lab2 - lineSegment
         //rysowanie odcinka przy pomocy Point2D
         line.Draw(renderer, true);
-
         // Odczytanie wspó³rzêdnych poszczególnych koñców odcinka
         Point2D start = line.GetStartPoint();
         Point2D end = line.GetEndPoint();
         /*koniec rysowania do linesegment*/ 
 
         /* Wypisanie wspó³rzêdnych poszczególnych koñców odcinka ale nie w petli zrobic
-        int startX, startY, endX, endY;
+        //int startX, startY, endX, endY;
         //start.print_xy(startX, startY);
         //end.print_xy(endX, endY);
         //std::cout << "Start point: x=" << startX << ", y=" << startY << std::endl;
         //std::cout << "End point: x=" << endX << ", y=" << endY << std::endl;
         */
-
 
         /*modyfikacja odcinka do lineSegment*/
         // Modyfikacja wspó³rzêdnych poszczególnych koñców odcinka
@@ -130,6 +146,9 @@ void Engine::Run()
         //rysowanie nowego odcinka
         line.Draw(renderer, true);
         /*koniec zad5 lab2 - lineSegment*/
+
+        // otwarta linia robiona na tablicy - chyba wywalic 
+        //pr1.Otwarta(renderer, nazwa);
 
         // lab2 zad6
         //linia ³amana otwarta na podstawie punktów
@@ -199,7 +218,7 @@ void Engine::MovementHandle()
         if (state[SDL_SCANCODE_LEFT])
         {
             p1.MoveLeft();
-            if (AniFrame == 3)
+            if (AniFrame == 5) //index tablicy do animacji
             {
                 AniFrame = 0;
             }
@@ -211,7 +230,7 @@ void Engine::MovementHandle()
         if (state[SDL_SCANCODE_RIGHT])
         {
             p1.MoveRight();
-            if (AniFrame == 3)
+            if (AniFrame == 5) //index tablicy do animacji
             {
                 AniFrame = 0;
             }
